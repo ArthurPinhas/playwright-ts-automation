@@ -9,7 +9,7 @@ let loginPage: LoginPage;
 test.beforeEach(async ({ page }) => {
     inventoryPage = new InventoryPage(page);
     loginPage = new LoginPage(page);
-    await page.goto('https://www.saucedemo.com/');
+    await page.goto('/');
     await loginPage.login(credentials.username, credentials.password);
 });
 

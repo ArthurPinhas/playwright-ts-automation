@@ -5,7 +5,7 @@ import { LoginPage } from '../pages/LoginPage';
 let loginPage: LoginPage;
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('https://www.saucedemo.com/');
+    await page.goto('/');
     loginPage = new LoginPage(page);
 });
 

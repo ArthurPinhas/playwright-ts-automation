@@ -1,6 +1,6 @@
 export const credentials = {
-    username: 'standard_user',
-    password: 'secret_sauce',
-    invalidUsername: 'invalid_user',
-    invalidPassword: 'invalid_password'
-}; 
+    username: process.env.USERNAME || '',
+    password: process.env.PASSWORD || '',
+    invalidUsername: process.env.INVALID_USERNAME || '',
+    invalidPassword: process.env.INVALID_PASSWORD || '',
+};
