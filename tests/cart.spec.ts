@@ -1,20 +1,7 @@
-import {test, expect} from '@playwright/test';
-import { InventoryPage } from '../pages/InventoryPage';
-import { LoginPage } from '../pages/LoginPage';
-import { credentials } from '../testData';
+import {test, expect} from '../fixtures';
 
-let inventoryPage: InventoryPage;
-let loginPage: LoginPage;
-
-test.beforeEach(async ({ page }) => {
-    inventoryPage = new InventoryPage(page);
-    loginPage = new LoginPage(page);
-    await page.goto('/');
-    await loginPage.login(credentials.username, credentials.password);
-});
-
-test('add product to cart', async ({ page }) => {
-    await inventoryPage.addProductToCart('backpack');
-    const cartItemCount = await inventoryPage.getCartItemCount();
+test('add product to cart', async ({ loggedInPage }) => {
+    await loggedInPage.addProductToCart('backpack');
+    const cartItemCount = await loggedInPage.getCartItemCount();
     expect(cartItemCount).toBe(1);
 });
