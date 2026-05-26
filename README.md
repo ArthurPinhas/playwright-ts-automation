@@ -22,8 +22,10 @@ E2E test automation framework built with Playwright and TypeScript, using Page O
 │   ├── login.spec.ts
 │   ├── cart.spec.ts
 │   └── api.spec.ts
-├── testData.ts         # Test data loaded from environment variables
-├── .env                # Local credentials (not committed)
+├── test-data/          # Test credentials and environment config
+│   └── testData.ts
+├── fixtures/           # Custom Playwright fixtures
+│   └── index.ts
 └── playwright.config.ts
 
 ## Test Coverage
