@@ -1,3 +1,5 @@
+[![Playwright Tests](https://github.com/ArthurPinhas/playwright-ts-automation/actions/workflows/playwright.yml/badge.svg)](https://github.com/ArthurPinhas/playwright-ts-automation/actions/workflows/playwright.yml)
+
 # Playwright TypeScript Automation
 
 E2E test automation framework built with Playwright and TypeScript, using Page Object Model (POM) architecture.
@@ -26,6 +28,8 @@ E2E test automation framework built with Playwright and TypeScript, using Page O
 │   └── testData.ts
 ├── fixtures/           # Custom Playwright fixtures
 │   └── index.ts
+├── utils/              # Reusable helper functions
+│   └── helpers.ts
 └── playwright.config.ts
 
 ## Test Coverage
@@ -57,6 +61,9 @@ INVALID_PASSWORD=invalid_password
 npx playwright test
 npx playwright test tests/login.spec.ts
 npx playwright test --headed
+# Run by tag
+npx playwright test --grep @smoke
+npx playwright test --grep @regression
 ```
 
 ## CI

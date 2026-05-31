@@ -7,7 +7,7 @@ test.beforeEach(async ({ request }) => {
     apiClient = new ApiClient(request);
 });
 
-test('API test', async () => {
+test('API test', { tag: ['@regression'] }, async () => {
     const user = await apiClient.getUser(1);
     expect(user.email).toBe('Sincere@april.biz');
 });
